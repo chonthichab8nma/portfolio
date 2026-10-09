@@ -1,0 +1,10 @@
+
+export default function Contact() {
+  return (
+    <section id="contact" className="min-h-[60vh] px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="text-4xl font-bold text-white">Contact Me</h2>
+      </div>
+    </section>
+  );
+}
