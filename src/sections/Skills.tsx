@@ -72,7 +72,7 @@ export default function Skills() {
       {/* Background */}
       <div className="skills-plasma" aria-hidden="true">
         <Plasma
-          color="#40e0d0"
+          color="#22D3EE"
           speed={0.45}
           scale={1.15}
           opacity={0.58}

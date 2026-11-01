@@ -19,7 +19,7 @@ export default function App() {
         COLOR_UPDATE_SPEED={10}
         SHADING
         RAINBOW_MODE={false}
-        COLOR="#40E0D0"
+        COLOR="#22D3EE"
         
       />
 

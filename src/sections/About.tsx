@@ -4,7 +4,7 @@ export default function About() {
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
         <div
           aria-hidden="true"
-          className="aspect-[4/5] w-full max-w-md justify-self-center rounded-3xl border border-cosmic-border bg-surface/40 shadow-[0_0_60px_rgba(74,191,185,0.08)]"
+          className="aspect-[4/5] w-full max-w-md justify-self-center rounded-3xl border border-verdigris/25 bg-surface/40 shadow-[0_0_60px_rgba(64,224,208,0.12)]"
         />
 
         <div>
@@ -13,7 +13,7 @@ export default function About() {
             GET TO KNOW ME
           </p>
           <h2 className="text-4xl font-bold text-alabaster md:text-5xl">
-            About Me
+            About <span className="text-cyan-400">Me</span>
           </h2>
 
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate-400">

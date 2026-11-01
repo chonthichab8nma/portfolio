@@ -146,10 +146,10 @@ button {
 
   background:
     radial-gradient(circle at 50% 72%,
-      rgba(64, 224, 208, 0.1),
+      rgba(34, 211, 238, 0.1),
       transparent 30%),
     radial-gradient(circle at 50% 58%,
-      rgba(204, 85, 0, 0.12),
+      rgba(34, 211, 238, 0.08),
       transparent 43%),
     linear-gradient(180deg,
       #080a0d 0%,
@@ -422,13 +422,13 @@ button {
 .skills-orb-one {
   top: 18%;
   left: -8rem;
-  background: #40e0d0;
+  background: #22d3ee;
 }
 
 .skills-orb-two {
   right: -8rem;
   bottom: 5%;
-  background: #f38a44;
+  background: #22d3ee;
 }
 
 /* ======================================

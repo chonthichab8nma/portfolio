@@ -10,14 +10,14 @@ export default function Hero() {
       className="flex min-h-screen items-center justify-center px-6"
     >
       <div className="mx-auto w-full max-w-6xl">
-        <p className="mb-4 text-sm tracking-[0.3em] text-verdigris">
+        <p className="mb-4 text-sm tracking-[0.3em] text-cyan-400">
           WELCOME TO MY PORTFOLIO
         </p>
 
         <h1 className="font-hero text-5xl font-semibold leading-tight md:text-7xl">
           <div className="mt-2">
             <GradientText
-              colors={["#f76b0e", "#CC5500", "#4ABFB9", "#783200"]}
+              colors={["#f76b0e", "#CC5500", "#22D3EE", "#783200"]}
               animationSpeed={8}
               showBorder={false}
             >
@@ -27,7 +27,7 @@ export default function Hero() {
 
           <div className="ml-8 md:ml-30">
             <GradientText
-              colors={["#f76b0e", "#CC5500", "#4ABFB9", "#783200"]}
+              colors={["#f76b0e", "#CC5500", "#40E0D0", "#783200"]}
               animationSpeed={8}
               showBorder={false}
             >
@@ -53,11 +53,11 @@ export default function Hero() {
             glowIntensity={1}
             coneSpread={25}
             animated={false}
-            colors={["#c084fc", "#f472b6", "#38bdf8"]}
+            colors={["#40E0D0", "#22D3EE", "#138B89"]}
           >
             <a
               href="#projects"
-              className="block rounded-full bg-verdigris px-7 py-3 font-medium text-slate-950 transition-colors hover:bg-verdigris/90 "
+              className="block rounded-full bg-cyan-400 px-7 py-3 font-medium text-slate-950 transition-colors hover:bg-cyan-400/90 "
             >
               View Projects
               <span aria-hidden="true">↗</span>

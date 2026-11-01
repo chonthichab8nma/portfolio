@@ -139,7 +139,7 @@ export default function Projects() {
           <p className="mb-3 text-sm font-medium tracking-[0.3em] text-pumpkin">
             MY WORK
           </p>
-          <h2 className="text-4xl font-bold text-white">
+          <h2 className="text-4xl font-bold text-white md:text-5xl">
             Projects & Experience
           </h2>
         </div>
