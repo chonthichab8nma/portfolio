@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -6,6 +8,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+
+   --font-hero: "Bricolage Grotesque", sans-serif;
+   
   /* Background */
   --color-space: #080a0d;
   --color-surface: #111820;
@@ -211,6 +216,28 @@ button {
   width: 100%;
   max-width: 1100px;
   margin-inline: auto;
+}
+
+.skills-row {
+  display: contents;
+}
+
+/* Desktop: 8 / 6 / 4 cards, centered into a downward triangle. */
+@media (min-width: 1024px) {
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 12px;
+    align-items: center;
+    max-width: 1100px;
+  }
+
+  .skills-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
 }
 
 /* Fixed portrait card size */
@@ -540,3 +567,62 @@ button {
   -webkit-backdrop-filter: blur(18px) saturate(1.5);
   backdrop-filter: blur(18px) saturate(1.5);
 }
+@keyframes staff-portal-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.thesis-card,
+.thesis-card .border-glow-inner {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.thesis-card .border-glow-inner {
+  overflow: hidden !important;
+  scrollbar-width: none;
+}
+
+.thesis-card .border-glow-inner::-webkit-scrollbar,
+.staff-portal-gallery::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@media (max-width: 639px) {
+  .staff-portal-marquee {
+    animation: staff-portal-marquee 28s linear infinite;
+    will-change: transform;
+  }
+}
+
+@media (min-width: 640px) {
+  .staff-portal-gallery {
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+
+  .staff-portal-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  .staff-portal-marquee {
+    width: 100%;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staff-portal-marquee {
+    animation: none;
+  }
+}
+
+

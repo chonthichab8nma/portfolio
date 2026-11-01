@@ -1,5 +1,6 @@
 import BorderGlow from "@/components/ui/BorderGlow.jsx";
 import GradientText from "../components/ui/GradientText.jsx";
+import BoonmaEyes from "@/components/ui/Eyes.js";
 
 export default function Hero() {
   return (
@@ -9,12 +10,13 @@ export default function Hero() {
     >
       <div className="mx-auto w-full max-w-6xl">
         <p className="mb-4 text-sm tracking-[0.3em] text-verdigris">
-          WELCOME TO MY UNIVERSE
+          WELCOME TO MY PORTFOLIO
         </p>
+        {/* <p className="font-hero tracking-[0.2em] text-white text-2xl">
+          Hi, I'm
+        </p> */}
 
-        <h1 className="text-5xl font-bold leading-tight md:text-7xl text-amber-50">
-          <span className="block">Hi, I'm</span>
-
+        <h1 className="font-hero text-5xl font-semibold leading-tight md:text-7xl">
           <div className="mt-2">
             <GradientText
               colors={["#f76b0e", "#CC5500", "#4ABFB9", "#783200"]}
@@ -31,14 +33,15 @@ export default function Hero() {
               animationSpeed={8}
               showBorder={false}
             >
-              Boonma
+              <BoonmaEyes />
             </GradientText>
           </div>
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-          Computer Science student passionate about building creative and
-          meaningful digital experiences.
+          Creative mind. Developer mindset. Bringing ideas to life through code.
+          I enjoy crafting modern web applications that blend clean design,
+          smooth interactions, and practical functionality.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4">
@@ -56,31 +59,24 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="block rounded-full bg-verdigris px-7 py-3 font-medium text-slate-950 transition-colors hover:bg-verdigris/90"
+              className="block rounded-full bg-verdigris px-7 py-3 font-medium text-slate-950 transition-colors hover:bg-verdigris/90 "
             >
               View Projects
+              <span aria-hidden="true">↗</span>
             </a>
           </BorderGlow>
 
-          <BorderGlow
-            className="hero-button-glow self-start"
-            edgeSensitivity={30}
-            glowColor="40 80 80"
-            backgroundColor="#120F17"
-            borderRadius={28}
-            glowRadius={40}
-            glowIntensity={1}
-            coneSpread={25}
-            animated={false}
-            colors={["#c084fc", "#f472b6", "#38bdf8"]}
+          <a
+            href="#contact"
+            className="block rounded-full border border-white/20 px-7 py-3 text-tawny transition-colors hover:bg-white/10"
           >
-            <a
-              href="#contact"
-              className="block rounded-full border border-white/20 px-7 py-3 text-tawny transition-colors hover:bg-white/10"
-            >
-              Contact Me
-            </a>
-          </BorderGlow>
+            Contact Me
+          </a>
+          <a
+            className="block rounded-full border border-white/20 px-7 py-3 text-tawny transition-colors hover:bg-white/10"
+          >
+            resume
+          </a>
         </div>
       </div>
     </section>
