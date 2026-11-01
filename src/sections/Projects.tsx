@@ -41,7 +41,7 @@ const projects = [
     category: "Frontend Development",
     description: "1",
     tech: ["HTML"],
-    image: "",
+    image: "/lumosia.webp",
   },
   {
     title: "Full Stack Development",
@@ -126,10 +126,13 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         {/* Section Heading */}
         <div className="mb-12">
-          <p className="mb-2 text-sm uppercase tracking-[0.3em] text-cyan-400">
-            My Work
+          <p className="mb-3 text-sm tracking-[0.3em] text-white">03</p>
+          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-pumpkin">
+            MY WORK
           </p>
-          <h2 className="text-4xl font-bold text-white">Projects & Experience</h2>
+          <h2 className="text-4xl font-bold text-white">
+            Projects & Experience
+          </h2>
         </div>
 
         {/* Featured Thesis Project */}
@@ -177,11 +180,11 @@ export default function Projects() {
                   {thesis.images.map((image, index) => (
                     <div
                       key={image}
-                      className={`w-1/3 max-w-[220px] overflow-hidden ${
+                      className={`w-1/3 max-w-[220px] overflow-visible ${
                         index === 1
-                          ? "-translate-y-2 sm:-translate-y-0"
-                          : "translate-y-4 sm:translate-y-3"
-                      }`}
+                          ? "z-10 scale-80 sm:scale-105"
+                          : "scale-90 translate-y-3 sm:translate-y-4"
+                      } transition-transform duration-300`}
                     >
                       <img
                         src={image}
@@ -453,7 +456,7 @@ export default function Projects() {
                 </div>
               </article>
             ) : (
-              // การ์ดโปรเจกต์ทั่วไป ใช้โค้ดเดิมของคุณ
+              //other projects
               <article
                 key={project.title}
                 className="group overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50"

@@ -1,4 +1,3 @@
-
 export default function About() {
   return (
     <section id="about" className="flex min-h-[80vh] items-center px-6 py-24">
@@ -9,9 +8,7 @@ export default function About() {
         />
 
         <div>
-          <p className="mb-3 text-sm tracking-[0.3em] text-white">
-              01
-            </p>
+          <p className="mb-3 text-sm tracking-[0.3em] text-white">01</p>
           <p className="mb-3 text-sm font-medium tracking-[0.3em] text-pumpkin">
             GET TO KNOW ME
           </p>
@@ -21,9 +18,9 @@ export default function About() {
 
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate-400">
             <p>
-              Hi, I&apos;m Chonthicha Boonma, a web developer interested in
-              both frontend and full-stack development, with a particular love
-              for UI design.
+              Hi, I&apos;m Chonthicha Boonma, a web developer interested in both
+              frontend and full-stack development, with a particular love for UI
+              design.
             </p>
             <p>
               I enjoy experimenting with colors, layouts, and different design

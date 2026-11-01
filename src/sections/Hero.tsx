@@ -12,9 +12,6 @@ export default function Hero() {
         <p className="mb-4 text-sm tracking-[0.3em] text-verdigris">
           WELCOME TO MY PORTFOLIO
         </p>
-        {/* <p className="font-hero tracking-[0.2em] text-white text-2xl">
-          Hi, I'm
-        </p> */}
 
         <h1 className="font-hero text-5xl font-semibold leading-tight md:text-7xl">
           <div className="mt-2">
