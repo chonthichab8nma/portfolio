@@ -37,25 +37,34 @@ const projects = [
     ],
   },
   {
-    title: "Landing Page",
-    category: "Frontend Development",
-    description: "1",
-    tech: ["HTML"],
+    title: "LANDING PAGE",
+    category: "COLLABORATIVE PROJECT",
+    description:
+      "A scented candle landing page developed collaboratively to practice Git workflows and team collaboration.",
+    tech: ["REACT", "TAILWIND CSS", "GIT", "GITHUB"],
     image: "/lumosia.webp",
+    liveUrl: "https://lomusia.vercel.app",
+    githubUrl: "https://github.com/chonthichab8nma/lomusia",
   },
   {
-    title: "Full Stack Development",
-    category: "Full Stack Development",
-    description: "2",
-    tech: ["HTML"],
-    image: "",
+    title: "PUMA E-COMMERCE",
+    category: "E-COMMERCE DEVELOPMENT",
+    description:
+      "A React-based shoe store website featuring product browsing, page navigation, and shopping cart management.",
+    tech: ["React", "JavaScript", "CSS", "HTML"],
+    image: "/puma.png",
+    liveUrl: "https://simple-react-jet.vercel.app",
+    githubUrl: "https://github.com/chonthichab8nma/Simple-React",
   },
   {
     title: "Pokémon API",
-    category: "Frontend Development",
-    description: "3",
-    tech: ["HTML"],
-    image: "",
+    category: "API INTEGRATION",
+    description:
+      "A Pokémon web app that fetches and displays Pokémon data using an external API.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Axios"],
+    image: "/pokemon.png",
+    liveUrl: "https://pokemon-yiod.vercel.app/pokemon",
+    githubUrl: "https://github.com/chonthichab8nma/pokemon",
   },
 ];
 
@@ -455,49 +464,74 @@ export default function Projects() {
                   </div>
                 </div>
               </article>
-            ) : (
-              //other projects
-              <article
-                key={project.title}
-                className="group overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50"
-              >
-                {"image" in project && project.image && (
-                  <div className="aspect-[16/9] overflow-hidden bg-white/5">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                )}
-
-                <div className="p-4">
-                  <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-cyan-400">
-                    {project.category}
-                  </p>
-
-                  <h3 className="mb-2 text-lg font-semibold text-white">
-                    {project.title}
-                  </h3>
-
-                  <p className="mb-4 text-xs leading-5 text-gray-400">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech?.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-white/10 px-2 py-1 text-[10px] text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ),
+            ) : null,
           )}
+
+          <div className="grid grid-cols-1 gap-4 md:col-span-3 md:grid-cols-3">
+            {projects
+              .filter((project) => project.title !== "SP auto service")
+              .map((project) => (
+                <article
+                  key={project.title}
+                  className="group h-full w-full overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50"
+                >
+                  {"image" in project && project.image && (
+                    <div className="aspect-[16/9] overflow-hidden bg-white/5">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+
+                  <div className="p-4">
+                    <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-cyan-400">
+                      {project.category}
+                    </p>
+                    <h3 className="mb-2 text-lg font-semibold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="mb-4 text-xs leading-5 text-gray-400">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tech?.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-white/10 px-2 py-1 text-[10px] text-gray-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-4 flex items-center gap-4">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-cyan-400 transition hover:text-cyan-300"
+                        >
+                          Live Demo ↗
+                        </a>
+                      )}
+
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-gray-400 transition hover:text-white"
+                        >
+                          GitHub ↗
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+          </div>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import BorderGlow from "@/components/ui/BorderGlow.jsx";
 import GradientText from "../components/ui/GradientText.jsx";
 import BoonmaEyes from "@/components/ui/Eyes.js";
 
+
 export default function Hero() {
   return (
     <section

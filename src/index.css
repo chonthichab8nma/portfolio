@@ -595,6 +595,7 @@ button {
   height: 0;
 }
 
+
 @media (max-width: 639px) {
   .staff-portal-marquee {
     animation: staff-portal-marquee 28s linear infinite;
