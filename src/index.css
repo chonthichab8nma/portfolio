@@ -33,6 +33,7 @@
 }
 
 :root {
+  color-scheme: only dark;
   font-family: Inter, system-ui, sans-serif;
   color: #e4e6da;
   background-color: #080a0d;
@@ -87,6 +88,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--color-alabaster);
   background-color: var(--color-space);
   overflow-x: hidden;
 }
