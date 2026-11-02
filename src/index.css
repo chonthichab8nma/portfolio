@@ -116,6 +116,76 @@ button {
   border-radius: inherit;
 }
 
+.hero-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-light {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-light__beam {
+  position: absolute;
+  top: -18rem;
+  right: -8rem;
+  width: clamp(24rem, 42vw, 48rem);
+  height: clamp(62rem, 105vw, 92rem);
+  transform: rotate(29deg);
+  transform-origin: 50% 0;
+  background: linear-gradient(
+    180deg,
+    rgba(220, 249, 255, 0.22) 0%,
+    rgba(34, 211, 238, 0.12) 28%,
+    rgba(243, 138, 68, 0.055) 58%,
+    transparent 84%
+  );
+  clip-path: polygon(42% 0, 58% 0, 94% 100%, 6% 100%);
+  filter: blur(18px);
+  opacity: 0.78;
+}
+
+.hero-light__glow {
+  position: absolute;
+  top: -24rem;
+  right: -22rem;
+  width: clamp(44rem, 68vw, 78rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 235, 242, 0.17) 0%,
+    rgba(34, 211, 238, 0.07) 32%,
+    transparent 69%
+  );
+  filter: blur(8px);
+}
+
+@media (max-width: 639px) {
+  .hero-light__beam {
+    top: -12rem;
+    right: -16rem;
+    width: 34rem;
+    height: 64rem;
+    opacity: 0.62;
+  }
+
+  .hero-light__glow {
+    top: -19rem;
+    right: -27rem;
+    width: 54rem;
+  }
+}
+
 .hero-button-glow .border-glow-inner,
 .hero-button-glow .border-glow-inner > * {
   width: 100%;
@@ -231,15 +301,15 @@ button {
 ====================================== */
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: center;
   align-items: flex-start;
 
-  gap: 12px;
+  gap: clamp(7px, 2.2vw, 10px);
 
   width: 100%;
-  max-width: 1100px;
+  max-width: 360px;
   margin-inline: auto;
 }
 
@@ -247,7 +317,24 @@ button {
   display: contents;
 }
 
-/* Desktop: 8 / 6 / 4 cards, centered into a downward triangle. */
+/* Tablet: compact, centered grids without changing the source order. */
+@media (min-width: 640px) and (max-width: 767px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 104px);
+    gap: 12px;
+    max-width: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, 104px);
+    gap: 12px;
+    max-width: none;
+  }
+}
+
+/* Desktop: preserve the original 8 / 6 / 4 downward triangle. */
 @media (min-width: 1024px) {
   .skills-grid {
     display: flex;
@@ -265,7 +352,7 @@ button {
   }
 }
 
-/* Fixed portrait card size */
+/* The shell owns sizing; GlassSurface fills it instead of forcing inline pixels. */
 
 .skill-card-shell {
   --icon-color: #40e0d0;
@@ -273,8 +360,7 @@ button {
 
   position: relative;
 
-  flex: 0 0 96px;
-  width: 96px;
+  width: 100%;
   height: 116px;
 
   min-width: 0;
@@ -287,19 +373,8 @@ button {
 }
 
 @media (max-width: 639px) {
-  .skills-grid {
-    gap: 8px;
-    max-width: 28rem;
-  }
-
-  .skill-card-shell,
-  .skill-card {
-    width: 86px;
-    height: 104px;
-  }
-
   .skill-card-shell {
-    flex-basis: 86px;
+    height: clamp(102px, 28vw, 112px);
   }
 
   .skill-card-content {
@@ -313,7 +388,7 @@ button {
   }
 
   .skill-name {
-    font-size: 10px;
+    font-size: clamp(10px, 2.8vw, 11px);
   }
 
   .skills-plasma {
@@ -321,11 +396,18 @@ button {
   }
 }
 
+@media (min-width: 1024px) {
+  .skill-card-shell {
+    flex: 0 0 96px;
+    width: 96px;
+  }
+}
+
 .skill-card {
   position: relative;
 
-  width: 96px;
-  height: 116px;
+  width: 100%;
+  height: 100%;
 
   transition:
     border-color 0.22s ease,

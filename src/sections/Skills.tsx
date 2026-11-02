@@ -60,9 +60,6 @@ const skills: Skill[] = [
 
 const skillRows = [skills.slice(0, 8), skills.slice(8, 14), skills.slice(14)];
 
-const CARD_WIDTH = 96;
-const CARD_HEIGHT = 116;
-
 export default function Skills() {
   return (
     <section
@@ -133,8 +130,7 @@ export default function Skills() {
                     }
                   >
                     <GlassSurface
-                      width={CARD_WIDTH}
-                      height={CARD_HEIGHT}
+                      fluid
                       borderRadius={14}
                       className="stardust-navbar skill-card"
                     >

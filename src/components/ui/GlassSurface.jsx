@@ -8,6 +8,7 @@ const GlassSurface = ({
   children,
   width = 200,
   height = 80,
+  fluid = false,
   borderRadius = 20,
   borderWidth = 0.07,
   brightness = 50,
@@ -151,8 +152,8 @@ const GlassSurface = ({
 
   const containerStyle = {
     ...style,
-    width: typeof width === "number" ? `${width}px` : width,
-    height: typeof height === "number" ? `${height}px` : height,
+    width: fluid ? "100%" : typeof width === "number" ? `${width}px` : width,
+    height: fluid ? "100%" : typeof height === "number" ? `${height}px` : height,
     borderRadius: `${borderRadius}px`,
     "--glass-frost": backgroundOpacity,
     "--glass-saturation": saturation,

@@ -7,9 +7,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-screen items-center justify-center overflow-x-clip px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28"
+      className="hero-section flex min-h-screen items-center justify-center overflow-hidden px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="hero-light" aria-hidden="true">
+        <span className="hero-light__beam" />
+        <span className="hero-light__glow" />
+      </div>
+
+      <div className="hero-content mx-auto w-full max-w-6xl">
         <p className="mb-4 text-[10px] tracking-[0.22em] text-cyan-400 sm:text-sm sm:tracking-[0.3em]">
           WELCOME TO MY PORTFOLIO
         </p>
