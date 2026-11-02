@@ -131,15 +131,20 @@ export default function Projects() {
   }, [previewImage]);
 
   return (
-    <section id="projects" className="px-6 py-24">
+    <section
+      id="projects"
+      className="overflow-x-clip px-4 py-16 sm:px-6 sm:py-20 lg:py-24"
+    >
       <div className="mx-auto max-w-6xl">
         {/* Section Heading */}
-        <div className="mb-12">
-          <p className="mb-3 text-sm tracking-[0.3em] text-white">03</p>
-          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-pumpkin">
+        <div className="mb-8 sm:mb-12">
+          <p className="mb-2 text-xs tracking-[0.25em] text-white sm:mb-3 sm:text-sm sm:tracking-[0.3em]">
+            03
+          </p>
+          <p className="mb-3 text-xs font-medium tracking-[0.22em] text-pumpkin sm:text-sm sm:tracking-[0.3em]">
             MY WORK
           </p>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
+          <h2 className="break-words text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
             Projects & Experience
           </h2>
         </div>
@@ -147,7 +152,7 @@ export default function Projects() {
         {/* Featured Thesis Project */}
         <BorderGlow
           animated={true}
-          className="relative mb-6 rounded-3xl p-5 sm:p-8 lg:p-10"
+          className="thesis-card relative mb-6 min-w-0 rounded-2xl p-4 sm:rounded-3xl sm:p-8 lg:p-10"
           borderRadius={24}
           glowRadius={35}
           glowIntensity={0.8}
@@ -156,49 +161,53 @@ export default function Projects() {
           backgroundColor="#080a0c"
           glowColor="180 70 60"
           colors={["#4ABFB9", "#38BDF8", "#F76B0E"]}
-          fillOpacity={0.2}
+          fillOpacity={0}
         >
-          {/* Decorative Shape */}
-          <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
-
           <div className="relative z-10">
             {/* Main Layout */}
-            <div className="grid gap-10">
+            <div className="grid min-w-0 grid-cols-1 gap-7 sm:gap-10">
               {/* Top: Project Information + Phone Mockups */}
-              <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+              <div className="grid min-w-0 grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
                 {/* LEFT: Project Information */}
-                <div>
+                <div className="min-w-0 max-w-full">
                   <p className="mb-2 text-[10px] uppercase tracking-[0.22em] text-white/35 sm:text-[11px]">
                     01 Thesis
                   </p>
-                  <p className="mb-3 text-xs uppercase tracking-widest text-cyan-400">
+                  <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-cyan-400 sm:mb-3 sm:text-xs sm:tracking-widest">
                     {thesis.category}
                   </p>
 
-                  <h3 className="text-3xl font-bold text-white sm:text-4xl">
+                  <h3 className="max-w-full break-words text-[1.35rem] font-bold leading-[1.2] text-white sm:text-3xl md:text-4xl md:leading-tight">
                     {thesis.title}
                   </h3>
 
-                  <p className="mt-5 text-sm leading-7 text-gray-400">
+                  <p className="mt-3 max-w-full break-words text-xs leading-5 text-gray-400 sm:mt-5 sm:text-sm sm:leading-7">
                     {thesis.description}
                   </p>
                 </div>
 
                 {/* RIGHT: 3 Phone Mockups */}
-                <div className="flex items-center justify-center gap-2 sm:gap-3">
+                {/* <div className="grid min-w-0 grid-cols-3 items-end gap-0 px-1 sm:flex sm:items-center sm:justify-center sm:gap-1 sm:px-0 lg:gap-0"> */}
+                <div className="mx-auto flex w-full max-w-[520px] min-w-0 items-center justify-center gap-0 sm:gap-1 lg:gap-1">
                   {thesis.images.map((image, index) => (
                     <div
                       key={image}
-                      className={`w-1/3 max-w-[220px] overflow-visible ${
+                      className={`min-w-0 flex-1 max-w-[220px] ${
                         index === 1
-                          ? "z-10 scale-80 sm:scale-105"
-                          : "scale-90 translate-y-3 sm:translate-y-4"
+                          ? "z-10 scale-100 sm:scale-105 lg:scale-[1.12]"
+                          : "scale-[0.92] translate-y-3 sm:translate-y-4 lg:scale-100"
                       } transition-transform duration-300`}
+                      // className={`-mx-2 min-w-0 overflow-hidden sm:mx-0 sm:w-1/3 sm:max-w-[220px] sm:overflow-visible lg:-mx-4 lg:max-w-[260px] ${
+                      //   index === 1
+                      //     ? "z-10 scale-100 sm:scale-105 lg:translate-x-2 lg:scale-[1.18]"
+                      //     : "scale-90 translate-y-3 sm:translate-y-4 lg:scale-105"
+                      // } transition-transform duration-300`}
                     >
                       <img
                         src={image}
                         alt={`Mobile screen ${index + 1}`}
-                        className="ml-[-20%] w-[140%] max-w-none object-contain"
+                        // className="block h-auto w-full object-contain sm:ml-[-20%] sm:w-[140%] sm:max-w-none lg:ml-[-27.5%] lg:w-[155%]"
+                        className="block h-auto w-full object-contain"
                       />
                     </div>
                   ))}
@@ -206,12 +215,12 @@ export default function Projects() {
               </div>
 
               {/* Technologies */}
-              <div className="border-t border-white/10 pt-7">
-                <p className="mb-5 text-xs uppercase tracking-[0.2em] text-cyan-400">
+              <div className="border-t border-white/10 pt-5 sm:pt-7">
+                <p className="mb-4 text-[10px] uppercase tracking-[0.18em] text-cyan-400 sm:mb-5 sm:text-xs sm:tracking-[0.2em]">
                   Technologies
                 </p>
 
-                <div className="grid gap-6 lg:grid-cols-3">
+                <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
                   {[
                     {
                       label: "Core Technologies",
@@ -235,7 +244,7 @@ export default function Projects() {
                         {group.items.map((item) => (
                           <span
                             key={item}
-                            className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-xs text-white/70 transition-colors hover:border-white/30 hover:text-white"
+                            className="max-w-full break-words rounded-full border border-white/10 bg-white/[0.05] px-2 py-1 text-[10px] leading-4 text-white/70 transition-colors hover:border-white/30 hover:text-white sm:px-2.5 sm:text-xs"
                           >
                             {item}
                           </span>
@@ -247,16 +256,18 @@ export default function Projects() {
               </div>
 
               {/* Desktop Mockups */}
-              <div className="border-t border-white/10 pt-7">
-                <div className="staff-portal-gallery w-full overflow-hidden px-1 pb-3">
-                  <div className="staff-portal-marquee flex w-max gap-4 sm:w-full">
+              <div className="border-t border-white/10 pt-5 sm:pt-7">
+                {/* <div className="staff-portal-gallery w-full overflow-hidden px-1 pb-3">
+                  <div className="staff-portal-marquee flex w-max gap-4 sm:w-full"> */}
+                <div className="staff-portal-gallery mx-auto w-full max-w-5xl overflow-hidden px-1 pb-3">
+                  <div className="staff-portal-marquee flex w-max gap-2 sm:w-full sm:gap-3">
                     {[
                       ...thesis.staffPortalImages,
                       ...thesis.staffPortalImages,
                     ].map((image, index) => (
                       <div
                         key={`${image}-${index}`}
-                        className={`relative w-[62vw] flex-none sm:min-w-0 sm:w-auto sm:flex-1 ${
+                        className={`relative w-[48vw] max-w-[180px] flex-none sm:max-w-none sm:min-w-0 sm:w-auto sm:flex-1 ${
                           index >= thesis.staffPortalImages.length
                             ? "sm:hidden"
                             : ""
@@ -294,13 +305,13 @@ export default function Projects() {
             project.title === "SP auto service" ? (
               <article
                 key={project.title}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:border-cyan-400/40 sm:col-span-2 lg:col-span-3"
+                className="group relative min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:border-cyan-400/40 md:col-span-3"
               >
                 <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
 
-                <div className="relative grid gap-8 p-5 sm:p-8 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:p-10">
+                <div className="relative grid min-w-0 gap-7 p-4 sm:gap-8 sm:p-8 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:p-10">
                   {/* LEFT: Internship Information */}
-                  <div className="flex flex-col justify-center">
+                  <div className="min-w-0 flex flex-col justify-center">
                     <p className="mb-2 text-[10px] uppercase tracking-[0.22em] text-white/35 sm:text-[11px]">
                       02 INTERNSHIP EXPERIENCE
                     </p>
@@ -308,14 +319,14 @@ export default function Projects() {
                       {project.category}
                     </p>
 
-                    <h3 className="text-3xl font-bold text-white sm:text-4xl">
+                    <h3 className="break-words text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
                       {project.title}
                     </h3>
 
-                    <p className="mt-3 text-sm text-white/50">
+                    <p className="mt-3 break-words text-xs leading-5 text-white/50 sm:text-sm">
                       DEVSMITH 4289 CO., LTD. - {project.duration} Experience
                     </p>
-                    <p className="mt-5 text-sm leading-7 text-gray-400">
+                    <p className="mt-4 break-words text-xs leading-5 text-gray-400 sm:mt-5 sm:text-sm sm:leading-7">
                       {project.description}
                     </p>
 
@@ -326,7 +337,7 @@ export default function Projects() {
                           {project.featuredProject.overview}
                         </p>
 
-                        <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div className="mt-5 grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
                           {/* CONTRIBUTIONS */}
                           <div>
                             <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-cyan-400">
@@ -389,12 +400,12 @@ export default function Projects() {
                   </div>
 
                   {/* RIGHT: Certificates & Awards */}
-                  <div className="border-t border-white/10 pt-7 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                  <div className="min-w-0 border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
                     <p className="mb-5 text-xs uppercase tracking-[0.2em] text-cyan-400">
                       Certificates & Achievements
                     </p>
 
-                    <div className="grid grid-cols-2 gap-3 sm:gap-5">
+                    <div className="grid grid-cols-1 gap-5 min-[390px]:grid-cols-2 sm:gap-5">
                       {project.achievements?.map((item) => (
                         <div
                           key={item.title}
@@ -402,7 +413,7 @@ export default function Projects() {
                         >
                           <BorderGlow
                             animated={true}
-                            className="overflow-hidden rounded-xl p-2"
+                            className="overflow-hidden rounded-xl p-1.5 sm:p-2"
                             borderRadius={12}
                             glowRadius={28}
                             glowIntensity={1}
@@ -436,11 +447,11 @@ export default function Projects() {
                             </button>
                           </BorderGlow>
 
-                          <h4 className="mt-3 text-sm font-semibold text-white">
+                          <h4 className="mt-2 break-words text-xs font-semibold text-white sm:mt-3 sm:text-sm">
                             {item.title}
                           </h4>
 
-                          <p className="mt-1 text-xs leading-relaxed text-gray-500">
+                          <p className="mt-1 break-words text-[10px] leading-4 text-gray-500 sm:text-xs sm:leading-relaxed">
                             {item.subtitle}
                           </p>
                         </div>
@@ -467,7 +478,7 @@ export default function Projects() {
             ) : null,
           )}
 
-          <div className="grid grid-cols-1 gap-4 md:col-span-3 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:col-span-3 md:grid-cols-2 xl:grid-cols-3">
             {projects
               .filter((project) => project.title !== "SP auto service")
               .map((project) => (
@@ -485,14 +496,14 @@ export default function Projects() {
                     </div>
                   )}
 
-                  <div className="p-4">
+                  <div className="min-w-0 p-4">
                     <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-cyan-400">
                       {project.category}
                     </p>
-                    <h3 className="mb-2 text-lg font-semibold text-white">
+                    <h3 className="mb-2 break-words text-base font-semibold text-white sm:text-lg">
                       {project.title}
                     </h3>
-                    <p className="mb-4 text-xs leading-5 text-gray-400">
+                    <p className="mb-4 break-words text-xs leading-5 text-gray-400">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -505,7 +516,7 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                    <div className="mt-4 flex items-center gap-4">
+                    <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
                       {project.liveUrl && (
                         <a
                           href={project.liveUrl}

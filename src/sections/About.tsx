@@ -1,22 +1,22 @@
 export default function About() {
   return (
-    <section id="about" className="flex min-h-[80vh] items-center px-6 py-24">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+    <section id="about" className="flex min-h-[80vh] items-center overflow-x-clip px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 sm:gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
         <div
           aria-hidden="true"
-          className="aspect-[4/5] w-full max-w-md justify-self-center rounded-3xl border border-verdigris/25 bg-surface/40 shadow-[0_0_60px_rgba(64,224,208,0.12)]"
+          className="aspect-[4/5] w-full max-w-[18rem] justify-self-center rounded-2xl border border-verdigris/25 bg-surface/40 shadow-[0_0_60px_rgba(64,224,208,0.12)] sm:max-w-sm sm:rounded-3xl md:max-w-md"
         />
 
-        <div>
-          <p className="mb-3 text-sm tracking-[0.3em] text-white">01</p>
-          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-pumpkin">
+        <div className="min-w-0">
+          <p className="mb-2 text-xs tracking-[0.25em] text-white sm:mb-3 sm:text-sm sm:tracking-[0.3em]">01</p>
+          <p className="mb-3 text-xs font-medium tracking-[0.22em] text-pumpkin sm:text-sm sm:tracking-[0.3em]">
             GET TO KNOW ME
           </p>
-          <h2 className="text-4xl font-bold text-alabaster md:text-5xl">
+          <h2 className="break-words text-3xl font-bold text-alabaster sm:text-4xl md:text-5xl">
             About <span className="text-cyan-400">Me</span>
           </h2>
 
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate-400">
+          <div className="mt-5 space-y-4 text-sm leading-6 text-slate-400 sm:mt-8 sm:space-y-5 sm:text-base sm:leading-7 lg:text-lg lg:leading-relaxed">
             <p>
               Hi, I&apos;m Chonthicha Boonma, a web developer interested in both
               frontend and full-stack development, with a particular love for UI

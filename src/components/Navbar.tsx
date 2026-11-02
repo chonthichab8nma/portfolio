@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import GlassSurface from "./ui/GlassSurface.jsx";
 
 const navLinks = [
@@ -11,10 +10,8 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-5 py-5">
+    <header className="fixed inset-x-0 top-0 z-50 px-2.5 py-3 sm:px-5 sm:py-5">
       <nav className="mx-auto flex max-w-6xl items-center justify-center">
 
         {/* Desktop Glass Navbar */}
@@ -40,37 +37,22 @@ export default function Navbar() {
           </GlassSurface>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-navigation"
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="rounded-full border border-cosmic-border bg-surface px-4 py-2 text-alabaster md:hidden"
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
+        {/* Persistent Mobile Navbar */}
         <div
           id="mobile-navigation"
-          className="mx-auto mt-3 flex max-w-6xl flex-col gap-4 rounded-2xl border border-cosmic-border bg-surface/95 p-6 backdrop-blur-xl md:hidden"
+          className="stardust-navbar flex h-12 w-full max-w-[390px] items-center justify-between rounded-full border border-white/15 bg-surface/75 px-2 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-sm text-alabaster transition-colors hover:text-pumpkin"
+              className="flex min-h-11 min-w-0 flex-1 items-center justify-center whitespace-nowrap px-1 text-[10px] font-medium text-alabaster/80 transition-colors duration-300 hover:text-pumpkin min-[360px]:text-[11px] min-[400px]:text-xs"
             >
               {link.label}
             </a>
           ))}
         </div>
-      )}
+      </nav>
     </header>
   );
 }

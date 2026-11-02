@@ -80,6 +80,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -87,6 +88,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--color-space);
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+section {
+  scroll-margin-top: 5rem;
 }
 
 button,
@@ -101,6 +114,18 @@ button {
 .hero-button-glow .border-glow-inner {
   overflow: hidden;
   border-radius: inherit;
+}
+
+.hero-button-glow .border-glow-inner,
+.hero-button-glow .border-glow-inner > * {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .hero-button-glow .border-glow-inner,
+  .hero-button-glow .border-glow-inner > * {
+    width: auto;
+  }
 }
 
 ::selection {
@@ -259,6 +284,41 @@ button {
 
   transition:
     transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)
+}
+
+@media (max-width: 639px) {
+  .skills-grid {
+    gap: 8px;
+    max-width: 28rem;
+  }
+
+  .skill-card-shell,
+  .skill-card {
+    width: 86px;
+    height: 104px;
+  }
+
+  .skill-card-shell {
+    flex-basis: 86px;
+  }
+
+  .skill-card-content {
+    gap: 7px;
+    padding: 7px 4px;
+  }
+
+  .skill-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .skill-name {
+    font-size: 10px;
+  }
+
+  .skills-plasma {
+    opacity: 0.55;
+  }
 }
 
 .skill-card {
@@ -579,6 +639,7 @@ button {
 
 .thesis-card,
 .thesis-card .border-glow-inner {
+  width: 100%;
   min-width: 0;
   max-width: 100%;
 }
@@ -586,6 +647,12 @@ button {
 .thesis-card .border-glow-inner {
   overflow: hidden !important;
   scrollbar-width: none;
+}
+
+.thesis-card .border-glow-inner > * {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .thesis-card .border-glow-inner::-webkit-scrollbar,

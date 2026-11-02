@@ -67,7 +67,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="skills-section px-6 py-24 md:py-32"
+      className="skills-section px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:py-32"
     >
       {/* Background */}
       <div className="skills-plasma" aria-hidden="true">
@@ -93,16 +93,16 @@ export default function Skills() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="mb-12 md:mb-16">
-          <p className="mb-3 text-sm tracking-[0.3em] text-white">
+        <div className="mb-8 sm:mb-12 md:mb-16">
+          <p className="mb-2 text-xs tracking-[0.25em] text-white sm:mb-3 sm:text-sm sm:tracking-[0.3em]">
             02
           </p>
 
-          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-pumpkin">
+          <p className="mb-3 text-xs font-medium tracking-[0.22em] text-pumpkin sm:text-sm sm:tracking-[0.3em]">
             WHAT I WORK WITH
           </p>
 
-          <h2 className="text-4xl font-bold text-alabaster md:text-5xl">
+          <h2 className="break-words text-3xl font-bold leading-tight text-alabaster sm:text-4xl md:text-5xl">
             Skills &amp; Technologies
           </h2>
         </div>
