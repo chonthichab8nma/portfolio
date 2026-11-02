@@ -19,7 +19,7 @@ const contacts = [
   {
     label: "PHONE",
     value: "+66 96 672 2654",
-    href: "tel:+66966722654",
+    href: "tel:+0966722654",
     icon: Phone,
   },
   {
