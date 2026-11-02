@@ -427,9 +427,6 @@ button {
     font-size: clamp(10px, 2.8vw, 11px);
   }
 
-  .skills-plasma {
-    opacity: 0.55;
-  }
 }
 
 @media (min-width: 1024px) {

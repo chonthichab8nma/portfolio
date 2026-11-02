@@ -1,5 +1,5 @@
 
-import type { CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import type { IconType } from "react-icons";
 import GlassSurface from "@/components/ui/GlassSurface.jsx";
 import Plasma from "@/components/ui/Plasma.jsx";
@@ -60,6 +60,40 @@ const skills: Skill[] = [
 
 const skillRows = [skills.slice(0, 8), skills.slice(8, 14), skills.slice(14)];
 
+function DesktopPlasma() {
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(min-width: 640px)").matches
+      : false,
+  );
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 640px)");
+    const updateViewport = () => setIsDesktop(desktopQuery.matches);
+
+    updateViewport();
+    desktopQuery.addEventListener("change", updateViewport);
+
+    return () => desktopQuery.removeEventListener("change", updateViewport);
+  }, []);
+
+  if (!isDesktop) return null;
+
+  return (
+    <div className="skills-plasma" aria-hidden="true">
+      <Plasma
+        color="#22D3EE"
+        speed={0.45}
+        scale={1.15}
+        opacity={0.58}
+        mouseInteractive
+        renderScale={0.65}
+        targetFps={45}
+      />
+    </div>
+  );
+}
+
 export default function Skills() {
   return (
     <section
@@ -67,17 +101,7 @@ export default function Skills() {
       className="skills-section px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:py-32"
     >
       {/* Background */}
-      <div className="skills-plasma" aria-hidden="true">
-        <Plasma
-          color="#22D3EE"
-          speed={0.45}
-          scale={1.15}
-          opacity={0.58}
-          mouseInteractive
-          renderScale={0.65}
-          targetFps={45}
-        />
-      </div>
+      <DesktopPlasma />
 
       <div
         className="skills-orb skills-orb-one"
