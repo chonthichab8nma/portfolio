@@ -1,8 +1,9 @@
 
-import { useEffect, useState, type CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import type { IconType } from "react-icons";
 import GlassSurface from "@/components/ui/GlassSurface.jsx";
 import Plasma from "@/components/ui/Plasma.jsx";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 
 import {
   SiCss,
@@ -61,21 +62,7 @@ const skills: Skill[] = [
 const skillRows = [skills.slice(0, 8), skills.slice(8, 14), skills.slice(14)];
 
 function DesktopPlasma() {
-  const [isDesktop, setIsDesktop] = useState(() =>
-    typeof window !== "undefined"
-      ? window.matchMedia("(min-width: 640px)").matches
-      : false,
-  );
-
-  useEffect(() => {
-    const desktopQuery = window.matchMedia("(min-width: 640px)");
-    const updateViewport = () => setIsDesktop(desktopQuery.matches);
-
-    updateViewport();
-    desktopQuery.addEventListener("change", updateViewport);
-
-    return () => desktopQuery.removeEventListener("change", updateViewport);
-  }, []);
+  const isDesktop = useMediaQuery("(min-width: 640px)");
 
   if (!isDesktop) return null;
 
@@ -95,6 +82,8 @@ function DesktopPlasma() {
 }
 
 export default function Skills() {
+  const isMobile = useMediaQuery("(max-width: 639px)");
+
   return (
     <section
       id="skills"
@@ -153,11 +142,22 @@ export default function Skills() {
                       } as CSSProperties
                     }
                   >
-                    <GlassSurface
-                      fluid
-                      borderRadius={14}
-                      className="stardust-navbar skill-card"
-                    >
+                    {isMobile ? (
+                      <div className="mobile-skill-card skill-card">
+                        <div className="skill-card-content">
+                          <span className="skill-card-glow" aria-hidden="true" />
+                          <Icon className="skill-icon" aria-hidden="true" />
+                          <span className="skill-label">
+                            <span className="skill-name">{name}</span>
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <GlassSurface
+                        fluid
+                        borderRadius={14}
+                        className="stardust-navbar skill-card"
+                      >
                       <div className="skill-card-content">
                         <span className="skill-card-glow" aria-hidden="true" />
                         <Icon className="skill-icon" aria-hidden="true" />
@@ -165,7 +165,8 @@ export default function Skills() {
                           <span className="skill-name">{name}</span>
                         </span>
                       </div>
-                    </GlassSurface>
+                      </GlassSurface>
+                    )}
                   </article>
                 );
               })}

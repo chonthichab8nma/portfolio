@@ -1,4 +1,5 @@
 import BorderGlow from "@/components/ui/BorderGlow";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 import { useEffect, useState } from "react";
 const projects = [
   {
@@ -107,6 +108,7 @@ const thesis = {
 };
 
 export default function Projects() {
+  const isMobile = useMediaQuery("(max-width: 639px)");
   const [previewImage, setPreviewImage] = useState<{
     src: string;
     alt: string;
@@ -151,7 +153,7 @@ export default function Projects() {
 
         {/* Featured Thesis Project */}
         <BorderGlow
-          animated={true}
+          animated={!isMobile}
           className="thesis-card relative mb-6 min-w-0 rounded-2xl p-4 sm:rounded-3xl sm:p-8 lg:p-10"
           borderRadius={24}
           glowRadius={35}
@@ -206,6 +208,8 @@ export default function Projects() {
                       <img
                         src={image}
                         alt={`Mobile screen ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         // className="block h-auto w-full object-contain sm:ml-[-20%] sm:w-[140%] sm:max-w-none lg:ml-[-27.5%] lg:w-[155%]"
                         className="block h-auto w-full object-contain"
                       />
@@ -261,10 +265,10 @@ export default function Projects() {
                   <div className="staff-portal-marquee flex w-max gap-4 sm:w-full"> */}
                 <div className="staff-portal-gallery mx-auto w-full max-w-5xl overflow-hidden px-1 pb-3">
                   <div className="staff-portal-marquee flex w-max gap-2 sm:w-full sm:gap-3">
-                    {[
-                      ...thesis.staffPortalImages,
-                      ...thesis.staffPortalImages,
-                    ].map((image, index) => (
+                    {(isMobile
+                      ? thesis.staffPortalImages
+                      : [...thesis.staffPortalImages, ...thesis.staffPortalImages]
+                    ).map((image, index) => (
                       <div
                         key={`${image}-${index}`}
                         className={`relative w-[48vw] max-w-[180px] flex-none sm:max-w-none sm:min-w-0 sm:w-auto sm:flex-1 ${
@@ -281,6 +285,8 @@ export default function Projects() {
                               <img
                                 src={image}
                                 alt={`Staff portal desktop screen ${index + 1}`}
+                                loading="lazy"
+                                decoding="async"
                                 className="h-full w-full object-contain object-top"
                               />
                             </div>
@@ -412,7 +418,7 @@ export default function Projects() {
                           className="group/certificate min-w-0"
                         >
                           <BorderGlow
-                            animated={true}
+                            animated={!isMobile}
                             className="overflow-hidden rounded-xl p-1.5 sm:p-2"
                             borderRadius={12}
                             glowRadius={28}
@@ -438,6 +444,8 @@ export default function Projects() {
                               <img
                                 src={item.image}
                                 alt={item.title}
+                                loading="lazy"
+                                decoding="async"
                                 className={`h-full w-full transition-transform duration-500 ${
                                   item.image === "/achievement.jpg"
                                     ? "scale-x-[1.12] object-contain group-hover/certificate:scale-x-[1.16]"
@@ -491,6 +499,8 @@ export default function Projects() {
                       <img
                         src={project.image}
                         alt={project.title}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
