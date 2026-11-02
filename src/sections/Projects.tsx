@@ -265,10 +265,10 @@ export default function Projects() {
                   <div className="staff-portal-marquee flex w-max gap-4 sm:w-full"> */}
                 <div className="staff-portal-gallery mx-auto w-full max-w-5xl overflow-hidden px-1 pb-3">
                   <div className="staff-portal-marquee flex w-max gap-2 sm:w-full sm:gap-3">
-                    {(isMobile
-                      ? thesis.staffPortalImages
-                      : [...thesis.staffPortalImages, ...thesis.staffPortalImages]
-                    ).map((image, index) => (
+                    {[
+                      ...thesis.staffPortalImages,
+                      ...thesis.staffPortalImages,
+                    ].map((image, index) => (
                       <div
                         key={`${image}-${index}`}
                         className={`relative w-[48vw] max-w-[180px] flex-none sm:max-w-none sm:min-w-0 sm:w-auto sm:flex-1 ${

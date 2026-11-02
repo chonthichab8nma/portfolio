@@ -795,9 +795,8 @@ button {
 
 @media (max-width: 639px) {
   .staff-portal-marquee {
-    width: 100%;
-    transform: none;
-    animation: none;
+    animation: staff-portal-marquee 32s linear infinite;
+    will-change: transform;
   }
 
   .border-glow-card::before,
