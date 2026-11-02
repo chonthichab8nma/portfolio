@@ -123,6 +123,22 @@ button {
   isolation: isolate;
 }
 
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .about-section {
+    min-height: auto;
+    padding-top: 1rem;
+  }
+
+  .about-profile {
+    transform: none;
+  }
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -252,6 +268,24 @@ button {
       #080a0d 0%,
       #0b1117 48%,
       #080a0d 100%);
+}
+
+/* Large portrait tablets can cross the desktop spacing breakpoint while also
+   having a very tall viewport. Keep sections content-led in that shape. */
+@media (min-width: 800px) and (max-width: 1199px) and (min-height: 1100px) {
+  .hero-section,
+  .about-section,
+  .skills-section {
+    min-height: auto;
+  }
+
+  .about-section,
+  .skills-section,
+  .projects-section,
+  .contact-section {
+    padding-top: clamp(3.5rem, 6vw, 4.5rem);
+    padding-bottom: clamp(3.5rem, 6vw, 4.5rem);
+  }
 }
 
 /* Plasma Background */

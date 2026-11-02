@@ -2,10 +2,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex min-h-[80vh] items-center overflow-x-clip px-4 py-16 sm:px-6 sm:py-20 lg:py-24"
+      className="about-section flex min-h-[80vh] items-center overflow-x-clip px-4 py-16 sm:px-6 sm:py-20 lg:py-24"
     >
       <div className="mx-auto grid w-full max-w-6xl items-center gap-8 sm:gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
-        <div className="mt-0 translate-y-8 aspect-[4/5] w-full max-w-[18rem] justify-self-center self-start overflow-hidden rounded-2xl border border-verdigris/25 shadow-[0_0_60px_rgba(64,224,208,0.12)] sm:max-w-sm sm:rounded-3xl md:max-w-md">
+        <div className="about-profile mt-0 translate-y-8 aspect-[4/5] w-full max-w-[18rem] justify-self-center self-start overflow-hidden rounded-2xl border border-verdigris/25 shadow-[0_0_60px_rgba(64,224,208,0.12)] sm:max-w-sm sm:rounded-3xl md:max-w-md">
           <img
             src="/profile.png"
             alt="Chonthicha Boonma"

@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 md:px-12 lg:py-24"
+      className="contact-section relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 md:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-6xl">
 
