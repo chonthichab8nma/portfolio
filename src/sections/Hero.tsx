@@ -2,7 +2,6 @@ import BorderGlow from "@/components/ui/BorderGlow.jsx";
 import GradientText from "../components/ui/GradientText.jsx";
 import BoonmaEyes from "@/components/ui/Eyes.js";
 
-
 export default function Hero() {
   return (
     <section
@@ -76,6 +75,8 @@ export default function Hero() {
             Contact Me
           </a>
           <a
+            href="/Chonthicha_Boonma_Resume.pdf"
+            download="Chonthicha_Boonma_Resume.pdf"
             className="flex min-h-11 items-center justify-center rounded-full border border-white/20 px-7 py-3 text-tawny transition-colors hover:bg-white/10"
           >
             resume
